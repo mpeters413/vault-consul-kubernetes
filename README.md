@@ -1,20 +1,15 @@
-# Running Vault and Consul on Kubernetes
+# Running Vault and Consul on Kubernetes in High Availability Mode
 
-## Want to learn how to build this?
-
-Check out the [post](https://testdriven.io/running-vault-and-consul-on-kubernetes).
-
-## Want to use this project?
 
 ### Prerequisites
 
-Install:
-
-1. [Go](https://golang.org/doc/install)
-1. CloudFlare's [SSL ToolKit](https://github.com/cloudflare/cfssl) (`cfssl` and `cfssljson`)
-1. [Consul](https://www.consul.io/docs/install/index.html)
-1. [Vault](https://www.vaultproject.io/docs/install/)
-1. [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
+You will need do  the following:
+1. Clone this repo
+1. Install [Go](https://golang.org/doc/install)
+1. Install CloudFlare's [SSL ToolKit](https://github.com/cloudflare/cfssl) (`cfssl` and `cfssljson`)
+1. Install [Consul](https://www.consul.io/docs/install/index.html)
+1. Install [Vault](https://www.vaultproject.io/docs/install/)
+1. Install [Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 
 ### Minikube
 
@@ -68,9 +63,23 @@ $ export VAULT_ADDR=https://127.0.0.1:8200
 $ export VAULT_CACERT="certs/ca.pem"
 ```
 
-### Verify
+### Initialize Vault
+
+cd into the directory of the project. my project is in ```/users/matthewpeters/git/vault-consul-kubernetes```
+run the vault commands below
 
 ```sh
-$ kubectl get pods
-$ vault status
+$ cd /users/matthewpeters/git/vault-consul-kubernetes
+$ vault operator init -key-shares=1 -key-threshold=1
+$ vault status 
 ```
+
+
+### Vault and Consul UI
+
+ Vault UI:
+ ```sh $ https://127.0.0.1:8200 ```
+
+Consul UI:
+ ```sh $ https://127.0.0.1:8080 ```
+
