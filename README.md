@@ -1,4 +1,4 @@
-# Running Vault and Consul on Kubernetes in High Availability Mode
+## Running Vault and Consul on Kubernetes in High Availability Mode
 
 
 ### Prerequisites
