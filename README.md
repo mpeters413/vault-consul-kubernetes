@@ -65,8 +65,7 @@ $ export VAULT_CACERT="certs/ca.pem"
 
 ### Initialize Vault
 
-cd into the directory of the project. my project is in ```/users/matthewpeters/git/vault-consul-kubernetes```
-run the vault commands below
+cd into the directory of the project. My project is in ```/users/matthewpeters/git/vault-consul-kubernetes```, then run the vault commands below:
 
 ```sh
 $ cd /users/matthewpeters/git/vault-consul-kubernetes
